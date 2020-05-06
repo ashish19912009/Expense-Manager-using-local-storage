@@ -10,6 +10,7 @@ import { makeStyles } from '@material-ui/core/styles';
 const OpeningBalance = (props) => {
     const classes = useStyles();
     const [amount, setAmount] = useState(0);
+    
     const updateDetailsHandler = (event) => {
        if(event.target.value >= 0 )
           setAmount(event.target.value)

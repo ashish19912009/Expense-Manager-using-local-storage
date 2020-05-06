@@ -9,10 +9,9 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 const SimpleList = (props) => {
-
   const classes = useStyles();
   const[data, setData] = useState({});
-
+  
   useEffect(()=>{
     setData(props.balanceSheet);
   },[props.balanceSheet]);

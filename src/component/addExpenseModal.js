@@ -69,17 +69,17 @@ const AddExpense = (props) => {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description">
         <DialogTitle id="alert-dialog-title">{"Add Expense"}</DialogTitle>
-        <form autoComplete="off" onSubmit={expenseFormHandler}>
-        <DialogContent className={classes.root}>
-          <TextField id="outlined-basic" required type='date' variant="outlined" onChange={(event) => updateDetailsHandler(event,'date')} value={expenseDetails.date}/>
-          <TextField id="outlined-basic" className={(parseInt(expenseDetails.amount) === 0 || expenseDetails.amount === '') ? `${classes.effect}` : `${classes.noEffect}`} label="Amount" required type='number' min="1" variant="outlined" onChange={(event) => updateDetailsHandler(event,'amount')} value={expenseDetails.amount}/>
-          <TextField id="outlined-basic" label="Details" required type='text' variant="outlined" onChange={(event) => updateDetailsHandler(event,'details')} value={expenseDetails.details}/>
-        </DialogContent>
-        <DialogActions>
-          <Button type='submit' color="primary">Save</Button>
-          <Button onClick={props.handleModalStatus.bind(this,'expense')} color="primary">Cancle</Button>
-        </DialogActions>
-        </form>
+          <form autoComplete="off" onSubmit={expenseFormHandler}>
+            <DialogContent className={classes.root}>
+              <TextField id="outlined-basic" required type='date' variant="outlined" onChange={(event) => updateDetailsHandler(event,'date')} value={expenseDetails.date}/>
+              <TextField id="outlined-basic" className={(parseInt(expenseDetails.amount) === 0 || expenseDetails.amount === '') ? `${classes.effect}` : `${classes.noEffect}`} label="Amount" required type='number' min="1" variant="outlined" onChange={(event) => updateDetailsHandler(event,'amount')} value={expenseDetails.amount}/>
+              <TextField id="outlined-basic" label="Details" required type='text' variant="outlined" onChange={(event) => updateDetailsHandler(event,'details')} value={expenseDetails.details}/>
+            </DialogContent>
+            <DialogActions>
+              <Button type='submit' color="primary">Save</Button>
+              <Button onClick={props.handleModalStatus.bind(this,'expense')} color="primary">Cancel</Button>
+            </DialogActions>
+          </form>
       </Dialog>
     </div>);
 };
