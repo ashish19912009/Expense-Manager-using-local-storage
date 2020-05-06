@@ -40,7 +40,7 @@ const OpeningBalance = (props) => {
             Save
           </Button>
           <Button onClick={props.handleModalStatus.bind(this,'openingBalance')} color="primary">
-            Cancle
+            Cancel
           </Button>
         </DialogActions>
         </form>
