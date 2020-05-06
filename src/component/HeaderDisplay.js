@@ -9,9 +9,9 @@ import IconButton from '@material-ui/core/IconButton';
 const HeaderDisplay = (props) => {
     const classes = useStyles();
     const[data, setData] = useState({
-      balance: null,
-      income: null,
-      expense: null
+      balance: 0,
+      income: 0,
+      expense: 0
     });
 
   useEffect(()=>{
@@ -66,7 +66,6 @@ const HeaderDisplay = (props) => {
 };
 
 export default HeaderDisplay;
-
 
 const useStyles = makeStyles((theme) => ({
   root: {

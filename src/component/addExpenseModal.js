@@ -3,7 +3,6 @@ import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
@@ -16,7 +15,6 @@ const AddExpense = (props) => {
         amount: 0,
         details:''
     });
-
     const updateDetailsHandler = (event,type) => {
         event.persist();
         if(type === 'date')
@@ -41,28 +39,27 @@ const AddExpense = (props) => {
                 }
         });
     }   
-
-const expenseFormHandler = (event) => {
-    event.preventDefault();
-    if(expenseDetails.amount > 0)
-    {
-      props.handleModalStatus('expense');
-      props.addExpense(expenseDetails);
-      setExpenseDetails({
-        type:'expense',
-        date: new Date(),
-        amount: 0,
-        details: ''
-    });
-    } else {
-      setExpenseDetails((data)=>{
-        return {
-          ...data,
-          amount: 0,
-      }
-      });
+    const expenseFormHandler = (event) => {
+        event.preventDefault();
+        if(expenseDetails.amount > 0)
+        {
+          props.handleModalStatus('expense');
+          props.addExpense(expenseDetails);
+          setExpenseDetails({
+            type:'expense',
+            date: new Date(),
+            amount: 0,
+            details: ''
+        });
+        } else {
+          setExpenseDetails((data)=>{
+            return {
+              ...data,
+              amount: 0,
+            }
+          });
+        }
     }
-}
 
   return (
     <div>
@@ -70,8 +67,7 @@ const expenseFormHandler = (event) => {
         open={props.modalStatus}
         onClose={props.handleModalStatus.bind(this,'expense')}
         aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
-      >
+        aria-describedby="alert-dialog-description">
         <DialogTitle id="alert-dialog-title">{"Add Expense"}</DialogTitle>
         <form autoComplete="off" onSubmit={expenseFormHandler}>
         <DialogContent className={classes.root}>
@@ -80,17 +76,12 @@ const expenseFormHandler = (event) => {
           <TextField id="outlined-basic" label="Details" required type='text' variant="outlined" onChange={(event) => updateDetailsHandler(event,'details')} value={expenseDetails.details}/>
         </DialogContent>
         <DialogActions>
-          <Button type='submit' color="primary">
-            Save
-          </Button>
-          <Button onClick={props.handleModalStatus.bind(this,'expense')} color="primary">
-            Cancle
-          </Button>
+          <Button type='submit' color="primary">Save</Button>
+          <Button onClick={props.handleModalStatus.bind(this,'expense')} color="primary">Cancle</Button>
         </DialogActions>
         </form>
       </Dialog>
-    </div>
-  );
+    </div>);
 };
 
 export default AddExpense;

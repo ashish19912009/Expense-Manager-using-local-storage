@@ -15,7 +15,6 @@ const AddIncome = (props) => {
         amount: 0,
         details:'',
     });
-
     const updateDetailsHandler = (event,type) => {
         event.persist();
         if(type === 'date')
@@ -41,28 +40,28 @@ const AddIncome = (props) => {
         });
     }   
 
-const incomeFormHandler = (event) => {
-    event.preventDefault();
-    if(expenseDetails.amount > 0)
-    {
-      props.addExpense(expenseDetails);
-      setExpenseDetails({
-        type: 'income',
-        date: new Date(),
-        amount: 0,
-        details: ''
-      });
-      props.handleModalStatus('income');
-    } else {
-      setExpenseDetails((data)=>{
-        return {
-          ...data,
-          amount: 0,
-          error: true
+    const incomeFormHandler = (event) => {
+        event.preventDefault();
+        if(expenseDetails.amount > 0)
+        {
+          props.addExpense(expenseDetails);
+          setExpenseDetails({
+            type: 'income',
+            date: new Date(),
+            amount: 0,
+            details: ''
+          });
+          props.handleModalStatus('income');
+        } else {
+          setExpenseDetails((data)=>{
+            return {
+              ...data,
+              amount: 0,
+              error: true
+            }
+          });
         }
-      });
     }
-}
 
   return (
     <div>
@@ -70,8 +69,7 @@ const incomeFormHandler = (event) => {
         open={props.modalStatus}
         onClose={props.handleModalStatus.bind(this,'income')}
         aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
-      >
+        aria-describedby="alert-dialog-description">
         <DialogTitle id="alert-dialog-title">{"Add Income"}</DialogTitle>
         <form autoComplete="off" onSubmit={incomeFormHandler}>
         <DialogContent className={classes.root}>
@@ -80,17 +78,12 @@ const incomeFormHandler = (event) => {
         <TextField id="outlined-basic" label="Details" required type='text' variant="outlined" onChange={(event) => updateDetailsHandler(event,'details')} value={expenseDetails.details}/>
         </DialogContent>
         <DialogActions>
-          <Button type='submit' color="primary">
-            Save
-          </Button>
-          <Button onClick={props.handleModalStatus.bind(this,'income')} color="primary">
-            Cancle
-          </Button>
+          <Button type='submit' color="primary">Save</Button>
+          <Button onClick={props.handleModalStatus.bind(this,'income')} color="primary">Cancle</Button>
         </DialogActions>
         </form>
       </Dialog>
-    </div>
-  );
+    </div>);
 };
 
 export default AddIncome;

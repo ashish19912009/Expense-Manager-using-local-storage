@@ -4,11 +4,11 @@ import MuiAlert from '@material-ui/lab/Alert';
 import { makeStyles } from '@material-ui/core/styles';
 /** SPA Custom Components */
 import Header from '../component/HeaderDisplay';
-import ListItems from '../component/allList';
+import ListItems from '../component/AllList';
 import BottomMenu from '../component/BottomNavigation';
-import AddItemModal from '../component/addIncomeModal';
-import AddExpenseModal from '../component/addExpenseModal';
-import OpeningBalance from '../component/openingBalanceModal';
+import AddItemModal from '../component/AddIncomeModal';
+import AddExpenseModal from '../component/AddExpenseModal';
+import OpeningBalance from '../component/OpeningBalanceModal';
 
 const Home = () => {
     const classes = useStyles();
