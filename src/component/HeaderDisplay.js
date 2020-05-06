@@ -44,19 +44,19 @@ const HeaderDisplay = (props) => {
             <span>Balance</span>
           </Grid>
           <Grid item xs={10}>
-            <Typography variant="h3" gutterBottom> {data.balance > 0 && data.balance.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1 ')} CZK</Typography>
+            <Typography variant="h3" gutterBottom> {data.balance >= 0 && data.balance > 0 ? data.balance.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1 ') : 0} CZK</Typography>
           </Grid>
           <Grid item xs={2}>
             <IconButton onClick={props.resetAll}><OfflineBoltIcon style={{color:'#FFF'}}/></IconButton>
           </Grid>
           <Grid item xs={4}>
             <Typography variant="subtitle1" gutterBottom>
-              <span style={{color:'#6DE23A'}}>Income {data.income > 0 && data.income.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1 ')} KC</span><br/>
+              <span style={{color:'#6DE23A'}}>Income {data.income >= 0 && data.income > 0 ? data.income.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1 '):0} KC</span><br/>
             </Typography>
           </Grid>
           <Grid item xs={4}>
             <Typography variant="subtitle1" gutterBottom>
-              <span style={{color:'#F9615F'}}>Spendings {data.expense >0 && data.expense.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1 ')} KC</span>
+              <span style={{color:'#F9615F'}}>Spendings {data.expense >= 0 && data.expense > 0 ? data.expense.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1 '):0} KC</span>
             </Typography>
           </Grid>
         </Grid>

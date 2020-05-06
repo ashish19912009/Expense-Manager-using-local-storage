@@ -25,7 +25,6 @@ const Home = () => {
 
     useEffect(() => {
         localStorage.setItem('accountData', JSON.stringify(accountDetails));
-        
         if(accountDetails.balance === null)
         {
             setOpeningModal(!openModalOpeningBal);
