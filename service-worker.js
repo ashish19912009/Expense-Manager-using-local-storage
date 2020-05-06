@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Expense-Manager-using-local-storage/precache-manifest.2eead8da19a6ceafdef139165a879ec2.js"
+  "/Expense-Manager-using-local-storage/precache-manifest.35e1eb08532b4571aff2cfe1a128b93b.js"
 );
 
 self.addEventListener('message', (event) => {
