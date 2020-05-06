@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e1451b03d2797b925b9765028fe8b771",
+    "revision": "18120af65b977d6f2b91f89d438b06be",
     "url": "/Expense-Manager-using-local-storage/index.html"
   },
   {
-    "revision": "d02e2431d05f05139423",
+    "revision": "f21d5b74a424d47b020d",
     "url": "/Expense-Manager-using-local-storage/static/css/main.5ecd60fb.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Expense-Manager-using-local-storage/static/js/2.33848a72.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d02e2431d05f05139423",
-    "url": "/Expense-Manager-using-local-storage/static/js/main.197e75f7.chunk.js"
+    "revision": "f21d5b74a424d47b020d",
+    "url": "/Expense-Manager-using-local-storage/static/js/main.884dbb85.chunk.js"
   },
   {
     "revision": "98847e59c2f9aeb84ab5",
